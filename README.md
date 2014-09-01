@@ -21,6 +21,12 @@ The README.md file is updated with relevant info, and should give a good idea of
 
 1. Create an MVC 5 Web Application, of type Web API (this automatically includes the core libraries for MVC and Web API). Choose "No authentication" for now.
 1. Create simple POCO for represent Book, Order and OrderDetail classes (note their navigation properties, which have the 'virtual' keyboard to 'help' Entity Framework).
+1. Build the application
+1. Create a controller of type 'Web API 2 Controller with actions, using Entity Framework' (so we don't have to create the context class by hand).
+1. In the new context class (WebAppContext.cs) Add DbSet<T> for Order and OrderDetail.
 
 ## Next
-* Create a controller - the main reason we're doing this is so the context class is created for us. The controller will be of type 'Web API 2 Controller with actions, using Entity Framework'.
+
+We will want to rebuild and seed the db each time we make a build or restart the application during development (as opposed to every time the model changes).
+
+We'll do this by defining a context initialiser that inherits from DropCreateDatabaseAlways<WebAppContext>.
