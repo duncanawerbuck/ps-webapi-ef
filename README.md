@@ -24,9 +24,8 @@ The README.md file is updated with relevant info, and should give a good idea of
 1. Build the application
 1. Create a controller of type 'Web API 2 Controller with actions, using Entity Framework' (so we don't have to create the context class by hand).
 1. In the new context class (WebAppContext.cs) Add DbSet<T> for Order and OrderDetail.
+1. Create context initializer (inherits from DropCreateDatabaseAlways<WebAppContext>) to ensure db is dropped/recreated always (on build or restart of app), and data is seeded for a single order.
 
 ## Next
 
-We will want to rebuild and seed the db each time we make a build or restart the application during development (as opposed to every time the model changes).
-
-We'll do this by defining a context initialiser that inherits from DropCreateDatabaseAlways<WebAppContext>.
+Seed some more data.
