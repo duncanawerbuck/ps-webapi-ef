@@ -7,6 +7,11 @@ namespace WebApp.Models
 {
     public class Order
     {
+        public Order()
+        {
+            OrderDetails = new List<OrderDetail>();
+        }
+
         public int Id { get; set; }
 
         public string Customer { get; set; }
@@ -14,6 +19,6 @@ namespace WebApp.Models
         public DateTime OrderDate { get; set; }
 
         // Navigate
-        public ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
